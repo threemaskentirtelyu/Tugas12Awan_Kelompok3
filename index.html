@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello from Our Team 👋</title>
+  <title>Jam Online ⏰</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -32,262 +32,278 @@
     .card {
       background: white;
       border-radius: 24px;
-      padding: 60px 40px;
+      padding: 40px 32px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
     }
 
     header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
 
     .main-title {
-      font-size: 48px;
+      font-size: 40px;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
     }
 
     .subtitle {
-      font-size: 18px;
+      font-size: 16px;
       color: #666;
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.5;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 32px;
+      align-items: flex-start;
     }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 0;
     }
 
     .section-title {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 30px;
-      color: #333;
-      text-align: center;
-    }
-
-    /* Team Section */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    .team-card {
-      text-align: center;
-      padding: 25px;
-      border-radius: 16px;
-      background: #f8f9ff;
-      border: 2px solid #efe9ff;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .team-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.1);
-      border-color: #667eea;
-    }
-
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .avatar.bayu {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
-
-    .avatar.syahdan {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    }
-
-    .avatar.fansa {
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .avatar.najwa {
-      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-      position: relative;
-    }
-
-    .hijab {
-      position: absolute;
-      width: 120%;
-      height: 40%;
-      background: #d4a574;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50% 50% 0 0;
-    }
-
-    .member-name {
       font-size: 20px;
       font-weight: 600;
-      color: #333;
-      margin-bottom: 8px;
-    }
-
-    .member-tagline {
-      font-size: 14px;
-      color: #999;
-      font-weight: 400;
-    }
-
-    /* Say Hello Section */
-    .say-hello {
-      text-align: center;
-      padding: 40px;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      border-radius: 16px;
-      margin-bottom: 30px;
-    }
-
-    .hello-text {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 25px;
+      margin-bottom: 16px;
       color: #333;
     }
 
-    .hello-button {
-      padding: 14px 32px;
-      font-size: 16px;
-      font-weight: 600;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-    }
-
-    .hello-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 28px rgba(102, 126, 234, 0.4);
-    }
-
-    .hello-button:active {
-      transform: scale(0.98);
-    }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 16px 24px;
-      border-radius: 50px;
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-      font-weight: 500;
-      animation: slideIn 0.4s ease;
-      display: none;
-      z-index: 1000;
-    }
-
-    .toast.show {
-      display: block;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateX(400px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
+    .decoration {
+      display: inline-block;
+      margin: 0 4px;
     }
 
     /* Clock Section */
-    .clock-section {
+    .clock-wrapper {
       text-align: center;
-      padding: 30px;
+      padding: 24px 20px;
+      border-radius: 18px;
       background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
-      border-radius: 16px;
-      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25);
+    }
+
+    .clock-label {
+      font-size: 14px;
+      color: #1f2933;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .digital-clock {
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 700;
-      color: #333;
+      color: #111827;
       font-family: 'Courier New', monospace;
       letter-spacing: 4px;
-      margin: 20px 0;
+      margin: 10px 0 0;
     }
 
     .clock-date {
-      font-size: 16px;
-      color: #666;
+      font-size: 15px;
+      color: #374151;
       margin-top: 10px;
     }
 
-    /* Footer */
-    footer {
+    .timezone-control {
+      margin-top: 24px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 14px 16px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .timezone-control label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .timezone-select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+      background: white;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .timezone-select:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+    }
+
+    .timezone-note {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* Timer Section */
+    .timer-section {
+      padding: 20px 18px;
+      border-radius: 18px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .timer-description {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 14px;
+    }
+
+    .timer-display {
+      font-size: 36px;
+      font-weight: 700;
+      font-family: 'Courier New', monospace;
+      color: #111827;
       text-align: center;
-      margin-top: 50px;
-      padding-bottom: 30px;
-      color: rgba(255, 255, 255, 0.8);
+      padding: 10px 0;
+      border-radius: 12px;
+      background: #111827;
+      color: #f9fafb;
+      margin-bottom: 16px;
+      letter-spacing: 3px;
+    }
+
+    .timer-inputs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .timer-inputs input {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .timer-inputs input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    }
+
+    .timer-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .timer-btn {
+      flex: 1;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .timer-btn.start {
+      background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+      color: #ecfdf5;
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+    }
+
+    .timer-btn.start:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .timer-btn.pause {
+      background: #f97316;
+      color: #fffbeb;
+      box-shadow: 0 6px 16px rgba(249, 115, 22, 0.3);
+    }
+
+    .timer-btn.pause:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+    }
+
+    .timer-btn.reset {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .timer-btn.reset:hover {
+      background: #d1d5db;
+      transform: translateY(-1px);
+    }
+
+    .timer-hint {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .timer-done {
+      animation: blink 0.8s ease-in-out 3;
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        background: #111827;
+        color: #f9fafb;
+      }
+      50% {
+        background: #facc15;
+        color: #111827;
+      }
+    }
+
+    /* Footer / Names */
+    .team-footer {
+      margin-top: 28px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
       font-weight: 500;
     }
 
-    /* Decorative elements */
-    .decoration {
-      display: inline-block;
-      margin: 0 8px;
+    .team-names {
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    .team-names span {
+      font-weight: 600;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .card {
-        padding: 40px 24px;
+        padding: 30px 20px;
+      }
+
+      main {
+        grid-template-columns: 1fr;
       }
 
       .main-title {
-        font-size: 36px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .hello-text {
-        font-size: 22px;
+        font-size: 32px;
       }
 
       .digital-clock {
-        font-size: 36px;
-      }
-
-      footer {
-        font-size: 14px;
+        font-size: 44px;
       }
     }
 
@@ -297,40 +313,25 @@
       }
 
       .card {
-        padding: 30px 20px;
-        border-radius: 16px;
+        padding: 24px 16px;
+        border-radius: 18px;
       }
 
       .main-title {
-        font-size: 28px;
+        font-size: 26px;
       }
 
       .subtitle {
         font-size: 14px;
       }
 
-      .team-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .section-title {
-        font-size: 20px;
-      }
-
-      .hello-text {
-        font-size: 18px;
-      }
-
       .digital-clock {
-        font-size: 28px;
+        font-size: 34px;
+        letter-spacing: 2px;
       }
 
-      .toast {
-        bottom: 20px;
-        right: 20px;
-        left: 20px;
-        padding: 12px 16px;
+      .timer-display {
+        font-size: 28px;
       }
     }
   </style>
@@ -340,109 +341,187 @@
     <div class="card">
       <!-- Header -->
       <header>
-        <h1 class="main-title">Hello from Our Team <span class="decoration">👋</span></h1>
-        <p class="subtitle">This website is created by Bayu, Syahdan, Fansa, and Najwa.</p>
+        <h1 class="main-title">Jam Online <span class="decoration">⏰</span></h1>
+        <p class="subtitle">
+          Pilih zona waktu favoritmu dan atur timer langsung dari web ini.
+        </p>
       </header>
 
-      <!-- Team Section -->
-      <section>
-        <h2 class="section-title"><span class="decoration">👥</span> Meet the Team</h2>
-        <div class="team-grid">
-          <!-- Bayu -->
-          <div class="team-card">
-            <div class="avatar bayu">B</div>
-            <h3 class="member-name">Bayu</h3>
-            <p class="member-tagline">Saying hello from the web! 💻</p>
-          </div>
+      <main>
+        <!-- Clock Section -->
+        <section>
+          <div class="clock-wrapper">
+            <div class="clock-label">Jam Sekarang</div>
+            <div id="main-clock" class="digital-clock">--:--:--</div>
+            <div id="main-date" class="clock-date">Memuat tanggal...</div>
 
-          <!-- Syahdan -->
-          <div class="team-card">
-            <div class="avatar syahdan">S</div>
-            <h3 class="member-name">Syahdan</h3>
-            <p class="member-tagline">Saying hello from the web! 💻</p>
-          </div>
-
-          <!-- Fansa -->
-          <div class="team-card">
-            <div class="avatar fansa">F</div>
-            <h3 class="member-name">Fansa</h3>
-            <p class="member-tagline">Saying hello from the web! 💻</p>
-          </div>
-
-          <!-- Najwa -->
-          <div class="team-card">
-            <div class="avatar najwa">
-              <div class="hijab"></div>
-              N
+            <div class="timezone-control">
+              <label for="timezone">Zona Waktu</label>
+              <select id="timezone" class="timezone-select">
+                <option value="Asia/Jakarta">WIB – Asia/Jakarta (Indonesia)</option>
+                <option value="Asia/Makassar">WITA – Asia/Makassar (Indonesia)</option>
+                <option value="Asia/Jayapura">WIT – Asia/Jayapura (Indonesia)</option>
+                <option value="Asia/Tokyo">Asia/Tokyo (Jepang)</option>
+                <option value="Europe/London">Europe/London (Inggris)</option>
+                <option value="Europe/Berlin">Europe/Berlin (Jerman)</option>
+                <option value="America/New_York">America/New_York (AS – New York)</option>
+                <option value="America/Los_Angeles">America/Los_Angeles (AS – LA)</option>
+              </select>
+              <p class="timezone-note">
+                Waktu di atas akan otomatis mengikuti zona waktu yang kamu pilih.
+              </p>
             </div>
-            <h3 class="member-name">Najwa</h3>
-            <p class="member-tagline">Saying hello from the web! 💻</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Say Hello Section -->
-      <div class="say-hello">
-        <p class="hello-text">We're happy to say hello to you on the web <span class="decoration">👋</span></p>
-        <button class="hello-button" id="helloBtn">Say Hello Back</button>
-      </div>
+        <!-- Timer Section -->
+        <section class="timer-section">
+          <h2 class="section-title"><span class="decoration">⏳</span> Timer</h2>
+          <p class="timer-description">
+            Atur durasi timer, lalu tekan <strong>Start</strong>. Cocok buat belajar, fokus, atau sekadar mengingatkan sesuatu.
+          </p>
 
-      <!-- Clock Section -->
-      <section>
-        <h2 class="section-title"><span class="decoration">⏰</span> Current Time</h2>
-        <div class="clock-section">
-          <div class="digital-clock" id="clock">--:--:--</div>
-          <div class="clock-date" id="date"></div>
-        </div>
-      </section>
+          <div id="timer-display" class="timer-display">00:00</div>
+
+          <div class="timer-inputs">
+            <input type="number" id="timer-minutes" min="0" placeholder="Menit">
+            <input type="number" id="timer-seconds" min="0" max="59" placeholder="Detik">
+          </div>
+
+          <div class="timer-buttons">
+            <button class="timer-btn start" id="start-timer">Start</button>
+            <button class="timer-btn pause" id="pause-timer">Pause</button>
+            <button class="timer-btn reset" id="reset-timer">Reset</button>
+          </div>
+
+          <p class="timer-hint">
+            Hint: misalnya 1 menit 30 detik ⇒ isi <strong>1</strong> pada menit dan <strong>30</strong> pada detik.
+          </p>
+        </section>
+      </main>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <p><span class="decoration">✨</span> © 2025 Hello Web Team – Bayu • Syahdan • Fansa • Najwa <span class="decoration">✨</span></p>
-    </footer>
+    <!-- Names / Hello -->
+    <div class="team-footer">
+      <div>Say hello from our team 👋</div>
+      <div class="team-names">
+        <span>Bayu</span> • <span>Syahdan</span> • <span>Fansa</span> • <span>Najwa</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="toast">Hello, nice to meet you too! 👋</div>
-
   <script>
-    // Update clock every second
+    // ====================== JAM ONLINE (TIMEZONE) ======================
+    const clockEl = document.getElementById('main-clock');
+    const dateEl = document.getElementById('main-date');
+    const timezoneSelect = document.getElementById('timezone');
+
     function updateClock() {
       const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      
-      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-      
-      // Format date in Indonesian
-      const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-      };
-      const dateStr = now.toLocaleDateString('id-ID', options);
-      document.getElementById('date').textContent = dateStr;
+      const tz = timezoneSelect.value || 'Asia/Jakarta';
+
+      const timeFormatter = new Intl.DateTimeFormat('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: tz
+      });
+
+      const dateFormatter = new Intl.DateTimeFormat('id-ID', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: tz
+      });
+
+      clockEl.textContent = timeFormatter.format(now);
+      dateEl.textContent = dateFormatter.format(now);
     }
 
-    // Initial clock update
-    updateClock();
-    
     // Update clock every second
+    updateClock();
     setInterval(updateClock, 1000);
 
-    // Hello button functionality
-    document.getElementById('helloBtn').addEventListener('click', function() {
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      
-      // Hide toast after 3 seconds
-      setTimeout(function() {
-        toast.classList.remove('show');
-      }, 3000);
-    });
+    // When timezone changes, update immediately
+    timezoneSelect.addEventListener('change', updateClock);
+
+    // =========================== TIMER ================================
+    const timerDisplay = document.getElementById('timer-display');
+    const minutesInput = document.getElementById('timer-minutes');
+    const secondsInput = document.getElementById('timer-seconds');
+    const startBtn = document.getElementById('start-timer');
+    const pauseBtn = document.getElementById('pause-timer');
+    const resetBtn = document.getElementById('reset-timer');
+
+    let timerInterval = null;
+    let timerRemaining = 0; // dalam detik
+
+    function renderTimer() {
+      const mins = Math.floor(timerRemaining / 60);
+      const secs = timerRemaining % 60;
+      const mm = String(mins).padStart(2, '0');
+      const ss = String(secs).padStart(2, '0');
+      timerDisplay.textContent = mm + ':' + ss;
+    }
+
+    function startTimer() {
+      // Jika tidak ada interval berjalan, mulai
+      if (timerInterval) return;
+
+      // Jika belum ada waktu tersisa, baca dari input
+      if (timerRemaining <= 0) {
+        const m = parseInt(minutesInput.value, 10) || 0;
+        const s = parseInt(secondsInput.value, 10) || 0;
+        const total = m * 60 + s;
+
+        if (total <= 0) {
+          alert('Silakan isi durasi timer (menit/detik) terlebih dahulu.');
+          return;
+        }
+        timerRemaining = total;
+        renderTimer();
+      }
+
+      timerDisplay.classList.remove('timer-done');
+
+      timerInterval = setInterval(() => {
+        timerRemaining--;
+        renderTimer();
+
+        if (timerRemaining <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          timerRemaining = 0;
+          timerDisplay.classList.add('timer-done');
+          alert('Timer selesai!');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      timerRemaining = 0;
+      renderTimer();
+      minutesInput.value = '';
+      secondsInput.value = '';
+      timerDisplay.classList.remove('timer-done');
+    }
+
+    startBtn.addEventListener('click', startTimer);
+    pauseBtn.addEventListener('click', pauseTimer);
+    resetBtn.addEventListener('click', resetTimer);
+
+    // Set tampilan awal
+    renderTimer();
   </script>
 </body>
 </html>
