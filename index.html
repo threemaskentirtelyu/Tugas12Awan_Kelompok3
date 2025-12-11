@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello from Our Team 👋</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 60px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .main-title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #666;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #333;
+      text-align: center;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .team-card {
+      text-align: center;
+      padding: 25px;
+      border-radius: 16px;
+      background: #f8f9ff;
+      border: 2px solid #efe9ff;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.1);
+      border-color: #667eea;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .avatar.bayu {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .avatar.syahdan {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .avatar.fansa {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .avatar.najwa {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      position: relative;
+    }
+
+    .hijab {
+      position: absolute;
+      width: 120%;
+      height: 40%;
+      background: #d4a574;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .member-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .member-tagline {
+      font-size: 14px;
+      color: #999;
+      font-weight: 400;
+    }
+
+    /* Say Hello Section */
+    .say-hello {
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      border-radius: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hello-text {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .hello-button {
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .hello-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 28px rgba(102, 126, 234, 0.4);
+    }
+
+    .hello-button:active {
+      transform: scale(0.98);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px 24px;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      font-weight: 500;
+      animation: slideIn 0.4s ease;
+      display: none;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      display: block;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Clock Section */
+    .clock-section {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+      border-radius: 16px;
+      margin-bottom: 30px;
+    }
+
+    .digital-clock {
+      font-size: 48px;
+      font-weight: 700;
+      color: #333;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 4px;
+      margin: 20px 0;
+    }
+
+    .clock-date {
+      font-size: 16px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-bottom: 30px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    /* Decorative elements */
+    .decoration {
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .card {
+        padding: 40px 24px;
+      }
+
+      .main-title {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .hello-text {
+        font-size: 22px;
+      }
+
+      .digital-clock {
+        font-size: 36px;
+      }
+
+      footer {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 30px 20px;
+        border-radius: 16px;
+      }
+
+      .main-title {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .section-title {
+        font-size: 20px;
+      }
+
+      .hello-text {
+        font-size: 18px;
+      }
+
+      .digital-clock {
+        font-size: 28px;
+      }
+
+      .toast {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        padding: 12px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <!-- Header -->
+      <header>
+        <h1 class="main-title">Hello from Our Team <span class="decoration">👋</span></h1>
+        <p class="subtitle">This website is created by Bayu, Syahdan, Fansa, and Najwa.</p>
+      </header>
+
+      <!-- Team Section -->
+      <section>
+        <h2 class="section-title"><span class="decoration">👥</span> Meet the Team</h2>
+        <div class="team-grid">
+          <!-- Bayu -->
+          <div class="team-card">
+            <div class="avatar bayu">B</div>
+            <h3 class="member-name">Bayu</h3>
+            <p class="member-tagline">Saying hello from the web! 💻</p>
+          </div>
+
+          <!-- Syahdan -->
+          <div class="team-card">
+            <div class="avatar syahdan">S</div>
+            <h3 class="member-name">Syahdan</h3>
+            <p class="member-tagline">Saying hello from the web! 💻</p>
+          </div>
+
+          <!-- Fansa -->
+          <div class="team-card">
+            <div class="avatar fansa">F</div>
+            <h3 class="member-name">Fansa</h3>
+            <p class="member-tagline">Saying hello from the web! 💻</p>
+          </div>
+
+          <!-- Najwa -->
+          <div class="team-card">
+            <div class="avatar najwa">
+              <div class="hijab"></div>
+              N
+            </div>
+            <h3 class="member-name">Najwa</h3>
+            <p class="member-tagline">Saying hello from the web! 💻</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Say Hello Section -->
+      <div class="say-hello">
+        <p class="hello-text">We're happy to say hello to you on the web <span class="decoration">👋</span></p>
+        <button class="hello-button" id="helloBtn">Say Hello Back</button>
+      </div>
+
+      <!-- Clock Section -->
+      <section>
+        <h2 class="section-title"><span class="decoration">⏰</span> Current Time</h2>
+        <div class="clock-section">
+          <div class="digital-clock" id="clock">--:--:--</div>
+          <div class="clock-date" id="date"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p><span class="decoration">✨</span> © 2025 Hello Web Team – Bayu • Syahdan • Fansa • Najwa <span class="decoration">✨</span></p>
+    </footer>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Hello, nice to meet you too! 👋</div>
+
+  <script>
+    // Update clock every second
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+      
+      // Format date in Indonesian
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      };
+      const dateStr = now.toLocaleDateString('id-ID', options);
+      document.getElementById('date').textContent = dateStr;
+    }
+
+    // Initial clock update
+    updateClock();
+    
+    // Update clock every second
+    setInterval(updateClock, 1000);
+
+    // Hello button functionality
+    document.getElementById('helloBtn').addEventListener('click', function() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      
+      // Hide toast after 3 seconds
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
